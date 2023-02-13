@@ -1,0 +1,31 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: goldenrod;
+
+}
+
+.container
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url(blackjack.png);
+    background-position: center 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container >h1{
+    font-size: 6rem;
+    font-weight: bold;
+}
