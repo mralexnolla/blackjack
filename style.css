@@ -1,129 +1,80 @@
-
-body{
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.cont
+body
 {
-     height: 100vh;
-    width: 100%;
-    background-image: url(blackjack.png);
-    background-position: center 70%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("./blackjack.png");
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 0px;
-    padding: 0px;
-
-}
-
-
-
-.bjack{
-  font-size: 90px;
- font-family: 'Trebuchet MS', Arial, sans-serif;
-    color: goldenrod;
- 
-  text-align: center;
-}
-
-
-.flexcontainer{
-    display: flex;
-
-    justify-content: space-around;
-    margin-bottom: 3rem;
-    color: white;
-    font size: 30px;
     font-weight: bold;
-
-}
-.flexcontainer1{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 4rem;
-     
-
-}
-
-
-.colum1{
-
-}
-
-.colum2{
-
-}
-.colum3{
-
-}
-
-.colum4{
-
-}
-
-.colum5{
-
-}
-
-h4{
+    color: white;
     text-align: center;
-    font-size: 20px;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 35px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+h1
+{
     color: goldenrod;
- 
+    font-size: 80px;
 }
 
-.flexcontainer2{
-    display: flex;
-    text-align: center;
-     justify-content: space-around;
-     padding-top: 1rems
 
-  
+button
+{
+    color: white;
+    width: 150px;    
+    padding: 15px 0px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
 }
 
 .btn1{
+    background-color: #1AE0ED;
+    margin-right: 20px;
+}
 
-    background-color: #1fbeff;
-     border-radius: 4px;
-    width:100px ;
-    height:30px ;
-    border: none;
-    box-shadow: 0px 2px 2px 2px black;
-s
+.btn2
+{
+    background-color: #EE112B;
+    margin-right: 20px;
+}
 
+.btn3
+{
+    background-color: goldenrod;
+    
+}
 
+.cards
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 
-
+#message
+{
+    font-style: italic;
+    color: goldenrod;
+    font-size: 40px;
 }
 
 
-.btn2{
-
-    background-color: #ed2f2f;
-     border-radius: 4px;
-    width:100px ;
-    height:30px ;
-    border: none;
-    box-shadow: 0px 2px 2px 2px black;
-    
-
-
-
+#dealer-cards img
+{
+    height: 175px;
+    width: 125px;
+    margin: 2px;
 }
 
-.btn3{
-
-    background-color: #e9e92d;
-    border-radius: 4px;
-    width:100px ;
-    height:30px ;
-    border: none;
-    box-shadow: 0px 2px 2px 2px black;
-    
-
-
+#your-cards img
+{
+    height: 175px;
+    width: 125px;
+    margin: 2px;
 }
