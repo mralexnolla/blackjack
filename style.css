@@ -1,7 +1,8 @@
 body
 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
-    background-image: url("./blackjack.png");
+    /* background-image: url("./blackjack.png"); */
+    background-image: url("./bjbackground.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     font-weight: bold;
