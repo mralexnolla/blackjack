@@ -16,13 +16,6 @@ let canHit = true;
         startGame();
     }
 
-
-
-
-
-
-
-
 // build Deck function 
 
 function buildDeck(){
@@ -64,7 +57,7 @@ function startGame(){
     // console.log(hidden)
     // console.log(dealerSum)
 
-    //rule: if the dealer sum is less than 17 his must pisk a cars. If greater than 17 then he muct stay
+    //rule: if the dealer sum is less than 17 he must pisk a card. If greater than 17 then he must stay
     while(dealerSum < 17){
         let cardImg = document.createElement("img");   // created an image tage <img />
         let card = deck.pop();                          // picked a card from the deck say 4-C.png
@@ -73,7 +66,7 @@ function startGame(){
         dealerAceCount += checkAce(card)
         document.getElementById("dealer-cards").append(cardImg)  // basically adding the cards to the dealers until he gets 17 or more 
     }
-   //console.log("dealler sum "+ dealerSum)
+   //console.log("dealer sum "+ dealerSum)
 
    // now we give cards to the user, must start with only two cards 
     for(let i=0; i < 2; i++){
@@ -116,12 +109,12 @@ function checkAce(card){
     return 0;
 }
 
-//function adds a card when you click on the hit utton
+//function adds a card when you click on the hit button
 function hit(){
     if(!canHit){
         return
     }
-        let cardImg = document.createElement("img");   // created an image tage <img />
+        let cardImg = document.createElement("img");   // created an image tag <img />
         let card = deck.pop();                          // picked a card from the deck say 4-C.png
         cardImg.src = "./cards/" + card + ".png"
         yourSum += getValue(card)
@@ -156,17 +149,25 @@ function stay(){
     let message = "";
 
     if(yourSum > 21){
-        message = `You loose! your Your sum is ${yourSum}`;
+        message = `You loose!Your sum is ${yourSum}`;
     }else if(dealerSum > 21){
         message = `you win ! Dealer Sum is ${dealerSum}`;
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        }).then(() => jsConfetti.addConfetti())
     }
     // you and the delear have a sum < 21
     else if(yourSum == dealerSum){
         message = `Tie!`
     }else if(yourSum > dealerSum){
-        message = `You win! Your sum is ${yourSum}`
+        message = `You win! Your sum is ${yourSum}`;
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        }).then(() => jsConfetti.addConfetti())
     }else if(yourSum < dealerSum){
-        message = `You loose! Your sum is ${yourSum}`
+        message = `You loose! Your sum is ${yourSum}`;
     }
 
     console.log(yourSum)
@@ -178,8 +179,10 @@ function stay(){
 }
 
 
-function newGame(){
-    dealerSum = null
-}
+// function newGame(){
+//     dealerSum = null
+// }
 
-document.getElementById("newGame").addEventListener("click", newGame)
+// document.getElementById("newGame").addEventListener("click", newGame)
+
+
