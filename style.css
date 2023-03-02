@@ -9,13 +9,12 @@ body
     color: white;
     text-align: center;
     font-size: 35px;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: hidden;
 }
 
-h1
-{
-    color: goldenrod;
+h1{
+    color:#ffe000;
     font-size: 80px;
 }
 
@@ -29,18 +28,18 @@ button
     border-radius: 6px;
     font-weight: bold;
     font-size: 25px;
-    margin-top: 30px;
+    margin-top: 20px;
     box-shadow: 5px 5px 6px rgba(0,0,0,0.4);
 }
 
 .btn1{
-    background-color: #1AE0ED;
+    background-color: #64b109;
     margin-right: 20px;
 }
 
 .btn2
 {
-    background-color: #EE112B;
+    background-color: #f1001c;
     margin-right: 20px;
 }
 
@@ -61,8 +60,8 @@ button
 #message
 {
     font-style: italic;
-    color: goldenrod;
-    font-size: 40px;
+    color: #fff700;
+    font-size: 60px;
 }
 
 
@@ -79,3 +78,31 @@ button
     width: 125px;
     margin: 2px;
 }
+
+
+@media screen and (min-width:320px) and (max-width:425px){
+
+.btn1{
+
+    margin-right: 0px;
+}
+
+.btn2
+{
+
+    margin-right: 0px;
+}
+
+
+
+
+      }
+
+      @media screen and (min-width:768px) and (max-width:1023px){
+
+      }
+
+      @media screen and (min-width:1024px) and (max-width:1439px){
+
+      }
+
