@@ -23,10 +23,9 @@ function buildDeck() {
     for (let i = 0; i < types.length; i++) {
         for (let j = 0; j < values.length; j++) {
             deck.push(values[j] + "-" + types[i]); //A-C -> K-C, A-D -> K-D
-        
         }
     }
-     //console.log(deck.lenght);
+    console.log(deck);
 }
 
 function shuffleDeck() {
@@ -35,6 +34,7 @@ function shuffleDeck() {
         let temp = deck[i];
         deck[i] = deck[j];
         deck[j] = temp;
+
     }
     console.log(deck);
 }
@@ -45,8 +45,8 @@ function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
-     console.log(hidden);
-     console.log(dealerSum);
+    // console.log(hidden);
+    // console.log(dealerSum);
     while (dealerSum < 17) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
@@ -55,9 +55,7 @@ function startGame() {
         dealerAceCount += checkAce(card);
         document.getElementById("dealer-cards").append(cardImg);
     }
-    //console.log(dealerSum);
-    //document.getElementById("dealer-sum").textContent = dealerSum;
-    
+    // console.log(dealerSum);
 
     for (let i = 0; i < 2; i++) {
         let cardImg = document.createElement("img");
@@ -66,12 +64,8 @@ function startGame() {
         yourSum += getValue(card);
         yourAceCount += checkAce(card);
         document.getElementById("your-cards").append(cardImg);
-        
     }
-    
 }
-
-     
 
 
 // defining the getValue function
@@ -128,42 +122,58 @@ function reduceAce(playerSum, playerAceCount) {
 
 // defining the stay function
 document.getElementById("stay").addEventListener("click", stay)
-function stay(){
+function stay() {
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
-
 
     shouldHit = false;
     document.getElementById("hidden").src = "./cards/" + hidden + ".png";
 
-        //   creating the message to display when someone wins loses or if there is a tie.
+    //   creating the message to display when someone wins loses or if there is a tie.
     let message = "";
     if (yourSum > 21) {
         message = "You Lose!";
     }
     else if (dealerSum > 21) {
         message = "You win!";
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        }).then(() => jsConfetti.addConfetti())
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
         message = "Tie!";
     }
     else if (yourSum > dealerSum) {
-        message = "You Win!";
+        message = "🎉 You Win!";
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+            emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        }).then(() => jsConfetti.addConfetti())
+
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
     }
-    console.log("Your sum is " + yourSum)
-    
     document.getElementById("message").innerText = message;
-    document.getElementById("dealer-sum").textContent = dealerSum;
+    document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("your-sum").innerText = yourSum;
 }
-
-
 
 // document.getElementById("newGame").addEventListener("click", newGame)
 // function newGame(){
 //     builddeck();
 // }
+
+
+let message = document.querySelector('#message');
+const canvas = document.querySelector('#confetti');
+
+const jsConfetti = new JSConfetti();
+
+message.addEventListener('click', () => {
+    jsConfetti.addConfetti({
+        emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+    }).then(() => jsConfetti.addConfetti())
+})
