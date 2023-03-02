@@ -14,7 +14,7 @@ body
 }
 
 h1{
-    color: goldenrod;
+    color:#ffe000;
     font-size: 80px;
 }
 
@@ -33,13 +33,13 @@ button
 }
 
 .btn1{
-    background-color: #123f42;
+    background-color: #64b109;
     margin-right: 20px;
 }
 
 .btn2
 {
-    background-color: #EE112B;
+    background-color: #f1001c;
     margin-right: 20px;
 }
 
@@ -60,8 +60,8 @@ button
 #message
 {
     font-style: italic;
-    color: goldenrod;
-    font-size: 40px;
+    color: #fff700;
+    font-size: 60px;
 }
 
 
