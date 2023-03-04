@@ -179,8 +179,8 @@ function stay(){
 }
 
 
-function newGame(e){
-    e.preventDefault();
+function newGame(){
+    // e.preventDefault();
    location.reload();
 
 
