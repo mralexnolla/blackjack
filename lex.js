@@ -59,7 +59,7 @@ function startGame(){
 
     //rule: if the dealer sum is less than 17 he must pisk a card. If greater than 17 then he must stay
     while(dealerSum < 17){
-        let cardImg = document.createElement("img");   // created an image tage <img />
+        let cardImg = document.createElement("img");   // created an image tag <img />
         let card = deck.pop();                          // picked a card from the deck say 4-C.png
         cardImg.src = "./cards/" + card + ".png"
         dealerSum += getValue(card)
@@ -70,7 +70,7 @@ function startGame(){
 
    // now we give cards to the user, must start with only two cards 
     for(let i=0; i < 2; i++){
-        let cardImg = document.createElement("img");   // created an image tage <img />
+        let cardImg = document.createElement("img");   // created an image tag <img />
         let card = deck.pop();                          // picked a card from the deck say 4-C.png
         cardImg.src = "./cards/" + card + ".png"
         yourSum += getValue(card)
@@ -179,10 +179,13 @@ function stay(){
 }
 
 
-// function newGame(){
-//     dealerSum = null
-// }
+function newGame(){
+    // e.preventDefault();
+   location.reload();
 
-// document.getElementById("newGame").addEventListener("click", newGame)
+
+}
+
+document.getElementById("newGame").addEventListener("click", newGame)
 
 
